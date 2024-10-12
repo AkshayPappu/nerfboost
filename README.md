@@ -36,13 +36,13 @@ pip install nerfboost
 
 ## Usage
 
-# Initialization
+### Initialization
 
 ```
 import nerfboost
 ```
 
-# Positional encoding
+### Positional encoding
 The positional encoding transforms input coordinates into a higher-dimensional space, crucial for NeRF models.
 
 ```
@@ -52,7 +52,7 @@ encoded_positions = nerfboost.positional_encoding_cuda(x, L)
 
 ```
 
-# Stratified and Uniform Sampling
+### Stratified and Uniform Sampling
 Stratified sampling generates sample points along a ray between near and far planes:
 Uniform sampling generates evenly spaced samples between near and far planes:
 
@@ -65,7 +65,7 @@ stratified_samples = nerfboost.stratified_sampling_cuda(near, far, num_samples)
 unifrom_samples = nerfboost.uniform_sampling_cuda(near, far, num_samples)
 ```
 
-# Hierarchical Sampling
+### Hierarchical Sampling
 Refines samples based on coarse predictions:
 
 ```
@@ -75,7 +75,7 @@ num_fine_samples = 128
 fine_samples = nerfboost.hierarchical_sampling_cuda(coarse_samples, weights, num_fine_samples)
 ```
 
-# Inverse Transform Sampling
+### Inverse Transform Sampling
 Generates samples using inverse transform sampling based on the given probability distribution:
 
 ```
@@ -84,7 +84,7 @@ num_samples = 128
 samples = nerfboost.inverse_transform_sampling_cuda(weights, num_samples)
 ```
 
-# Volume Rendering
+### Volume Rendering
 Computes the final color and density for each ray based on input densities, colors, and distances:
 
 ```
@@ -94,7 +94,7 @@ distances = torch.rand(64)  # Distance along the ray
 final_colors = nerfboost.volume_rendering_cuda(densities, colors, distances)
 ```
 
-# MLP Network Processing
+### MLP Network Processing
 Processes sampled points through a multi-layer perceptron (MLP) network:
 
 ```
@@ -104,7 +104,7 @@ weights = [torch.randn(3, 64), torch.randn(64, 64), torch.randn(64, 3)]  # MLP w
 output = nerfboost.mlp_network_cuda(sampled_points, directions, weights)
 ```
 
-# Rendering Loss (MSE)
+### Rendering Loss (MSE)
 Computes the mean squared error (MSE) between the rendered image and the ground truth image:
 
 ```
@@ -113,7 +113,7 @@ ground_truth_image = torch.rand(256, 256, 3)  # Ground truth image
 loss = nerfboost.rendering_loss_cuda(rendered_image, ground_truth_image)
 ```
 
-# Ray Generation
+### Ray Generation
 Generates rays for rendering using the camera intrinsics and resolution:
 
 ```
