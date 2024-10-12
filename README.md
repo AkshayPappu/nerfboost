@@ -2,6 +2,8 @@
 
 nerfboost is a CUDA-accelerated Python package designed to make Neural Radiance Fields (NeRF) model training easier and more efficient, particularly for applications in augmented reality (AR) and virtual reality (VR). NeRF models are essential for generating high-quality, 3D scene reconstructions from 2D images or views, making them perfect for AR/VR experiences. nerfboost provides high-performance implementations of key NeRF operations, accelerating training and rendering times for AR/VR projects.
 
+Check out the PyPI package here: [nerfboost on PyPI](https://pypi.org/project/nerfboost/)
+
 ## Features
 
 - **CUDA-accelerated functions** for efficient neural rendering tasks.
